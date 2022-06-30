@@ -7,29 +7,29 @@ const app = Vue.createApp({
             web: 'https://www.camt.cmu.ac.th/index.php/th/',
             inStock: true,
             inventory: 100,
+            onSale: true,
             details: ['50% cotton', '30% wool', '20% polyester '],
             variants: [
-                { id: 2234 , color:'green', image: './assets/images/socks_green.jpg' },
-                { id: 2235 , color:'blue', image: './assets/images/socks_blue.jpg'}
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' }
 
             ],
             size: ['Size = S,M,L'],
-            cart: 0 ,
+            cart: 0,
         }
     },
-    methods:{
-        addToCart(){
+    methods: {
+        addToCart() {
             this.cart += 1
         },
-        updateImage(variantImage){
+        updateImage(variantImage) {
             this.image = variantImage
-        }, 
+        },
         changeStatus() {
-            this.count += 1
-            if(this.count%2 !== 0){
+            if (this.inventory == 100) {
                 this.inventory = 0
             }
-            else if(this.count%2 === 0) {
+            else {
                 this.inventory = 100
             }
 
