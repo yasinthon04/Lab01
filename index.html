@@ -26,8 +26,11 @@
                 <ul>
                     <li v-for="detail in details ">{{detail }} </li>
                 </ul>
+                <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color}}</div>
                 <p v-if="inventory > 50">OnSale</p>
                 <p v-else>Not For Sale</p>
+                <p> {{size}}</p>
+                
             </div>
         </div>
     </div>
