@@ -13,23 +13,26 @@
 <body>
     <div id="app">
         <div class="nav-bar"></div>
-            <div class="product-container ">
+        <div class="product-container ">
             <div class="product-image">
                 <!-- image goes here-->
-                <img :src="image" >
+                <img :src="image">
             </div>
             <div class="product-info">
                 <h1><a :href="web">{{product}}</a></h1>
                 <p v-if="inventory > 10 ">In Stock</p>
-                <p v-else-if="inventory <= 10 && inventory > 0 " >In Stock  </p>
+                <p v-else-if="inventory <= 10 && inventory > 0 ">In Stock </p>
                 <p v-else>Out of Stock</p>
+                <p v-if="inventory > 50">OnSale</p>
+                <p v-else>Not For Sale</p>
             </div>
         </div>
     </div>
-            <!-- Import Js -->
-            <script src="./main.js">
-                const mountedApp = app.mount('#app')
-            </script>
+    <!-- Import Js -->
+    <script src="./main.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
 </body>
 
 </html>
