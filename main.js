@@ -14,7 +14,7 @@ const app = Vue.createApp({
                 { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' }
 
             ],
-            size: ['Size = S,M,L'],
+            size: ['S','M','L'],
             cart: 0,
         }
     },
